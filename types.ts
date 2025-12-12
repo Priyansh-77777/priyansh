@@ -38,8 +38,22 @@ export interface WorkItem {
 }
 
 export interface CaseStudy {
+  id: string;
   title: string;
   category: string;
   summary: string;
-  link: string;
+}
+
+export interface ContentSection {
+  type: 'text' | 'list' | 'highlight' | 'metric-grid';
+  heading?: string;
+  content?: string;
+  items?: string[];
+}
+
+export interface CaseStudyDetail extends CaseStudy {
+  role: string;
+  focus: string;
+  scope: string;
+  sections: ContentSection[];
 }

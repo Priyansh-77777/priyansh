@@ -39,13 +39,13 @@ const Hero: React.FC = () => {
               Contact Me
               <Mail className="w-4 h-4" />
             </a>
-            <button 
-              onClick={() => window.print()}
+            <a 
+              href="https://drive.google.com/uc?export=download&id=1sBwv6jnNtM2N6PieHVj_gfqDowu_RZ0u"
               className="group flex items-center justify-between gap-4 bg-transparent border border-line text-ink px-8 py-4 rounded-full font-medium transition-all hover:border-ink"
             >
               Download CV
               <ArrowDownRight className="w-4 h-4 group-hover:rotate-[-45deg] transition-transform" />
-            </button>
+            </a>
           </div>
         </div>
       </div>

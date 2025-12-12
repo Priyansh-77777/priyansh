@@ -2,7 +2,11 @@ import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { CASE_STUDIES } from '../constants';
 
-const CaseStudies: React.FC = () => {
+interface Props {
+  onSelect: (id: string) => void;
+}
+
+const CaseStudies: React.FC<Props> = ({ onSelect }) => {
   return (
     <section id="case-studies" className="bg-paper border-b border-line">
       <div className="max-w-[1400px] mx-auto">
@@ -25,7 +29,8 @@ const CaseStudies: React.FC = () => {
               {CASE_STUDIES.map((study, idx) => (
                 <div 
                   key={idx} 
-                  className={`p-12 border-b border-line ${idx % 2 === 0 ? 'md:border-r' : ''} group hover:bg-zinc-50 transition-colors flex flex-col justify-between`}
+                  className={`p-12 border-b border-line ${idx % 2 === 0 ? 'md:border-r' : ''} group hover:bg-zinc-50 transition-colors flex flex-col justify-between cursor-pointer`}
+                  onClick={() => onSelect(study.id)}
                 >
                   <div>
                     <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-graphite mb-4">
@@ -35,21 +40,16 @@ const CaseStudies: React.FC = () => {
                     <h3 className="text-2xl font-serif text-ink mb-4 leading-tight group-hover:underline decoration-1 underline-offset-4">
                       {study.title}
                     </h3>
-                    <p className="text-graphite text-sm leading-relaxed mb-8">
+                    <p className="text-graphite text-sm leading-relaxed mb-8 line-clamp-3">
                       {study.summary}
                     </p>
                   </div>
                   
-                  <a href={study.link} className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-ink group-hover:gap-3 transition-all">
+                  <button className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-ink group-hover:gap-3 transition-all">
                     Read Analysis <ArrowUpRight className="w-3 h-3" />
-                  </a>
+                  </button>
                 </div>
               ))}
-              
-              {/* Placeholder for "Coming Soon" or more */}
-              <div className="p-12 border-b border-line flex items-center justify-center bg-zinc-50/50">
-                <span className="text-xs font-mono text-zinc-400">More studies coming soon...</span>
-              </div>
             </div>
           </div>
 

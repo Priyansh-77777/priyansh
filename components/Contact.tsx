@@ -45,7 +45,7 @@ const Contact: React.FC = () => {
               </a>
 
               <a 
-                href="#" 
+                href={`tel:${HERO_DATA.contact.phone}`}
                 className="group flex items-center gap-4 p-6 border border-line bg-white hover:border-ink transition-colors"
               >
                 <div className="w-8 h-8 bg-zinc-100 rounded-full flex items-center justify-center text-ink group-hover:bg-green-600 group-hover:text-white transition-colors">
@@ -60,7 +60,15 @@ const Contact: React.FC = () => {
         <div className="flex flex-col md:flex-row justify-between items-center text-xs font-mono text-graphite uppercase tracking-wider">
           <p>&copy; {new Date().getFullYear()} Priyansh Shekhar.</p>
           <div className="flex gap-8 mt-4 md:mt-0">
-             <span>Bengaluru, India</span>
+             <a 
+               href="https://docs.google.com/presentation/d/1mYU-WL6XCUcq2XYwdYXJIY5aoazXLrQDqmmJn5yFayY/edit?slide=id.g3a8eca84750_0_0#slide=id.g3a8eca84750_0_0"
+               target="_blank"
+               rel="noopener noreferrer"
+               className="hover:text-ink transition-colors cursor-default"
+               title="Details"
+             >
+               Bengaluru, India
+             </a>
              <span>Product Portfolio</span>
           </div>
         </div>
