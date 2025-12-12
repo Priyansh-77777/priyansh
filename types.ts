@@ -34,6 +34,7 @@ export interface WorkItem {
   androidLink?: string;
   iosLink?: string;
   webLink?: string;
+  description?: string;
 }
 
 export interface CaseStudy {

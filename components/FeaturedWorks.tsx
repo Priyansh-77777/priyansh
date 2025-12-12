@@ -1,8 +1,15 @@
-import React from 'react';
-import { Gamepad2, Trophy, Smartphone, ArrowUpRight, Globe } from 'lucide-react';
+import React, { useState } from 'react';
+import { Gamepad2, Trophy, Smartphone, ArrowUpRight, Globe, X } from 'lucide-react';
 import { FEATURED_WORKS } from '../constants';
 
 const FeaturedWorks: React.FC = () => {
+  const [activeWebPreview, setActiveWebPreview] = useState<string | null>(null);
+
+  const handleWebPreview = (e: React.MouseEvent, url: string) => {
+    e.preventDefault();
+    setActiveWebPreview(url);
+  };
+
   return (
     <section id="works" className="bg-paper border-b border-line">
       <div className="max-w-[1400px] mx-auto">
@@ -33,19 +40,24 @@ const FeaturedWorks: React.FC = () => {
                 className="group relative border-b border-line last:border-b-0 transition-colors hover:bg-white"
               >
                 <div className="p-8 md:p-12 flex flex-col md:flex-row md:items-center justify-between gap-8">
-                  {/* Title & Category */}
-                  <div className="md:w-1/2">
+                  {/* Title, Category & Description */}
+                  <div className="md:w-7/12">
                     <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-graphite mb-3">
                        <span className="w-2 h-2 rounded-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity"></span>
                        {work.category}
                     </div>
-                    <h3 className="text-4xl md:text-5xl font-serif text-ink group-hover:translate-x-2 transition-transform duration-300">
+                    <h3 className="text-4xl md:text-5xl font-serif text-ink group-hover:translate-x-2 transition-transform duration-300 mb-4">
                       {work.title}
                     </h3>
+                    {work.description && (
+                      <p className="text-graphite leading-relaxed text-sm md:text-base max-w-xl group-hover:text-ink transition-colors">
+                        {work.description}
+                      </p>
+                    )}
                   </div>
 
                   {/* Metadata & Action */}
-                  <div className="md:w-1/2 flex flex-col md:items-end gap-6">
+                  <div className="md:w-5/12 flex flex-col md:items-end gap-6">
                     <div className="flex flex-wrap gap-2 md:justify-end">
                       {work.tags.map((tag, tIdx) => (
                         <span 
@@ -61,9 +73,8 @@ const FeaturedWorks: React.FC = () => {
                       {work.webLink && (
                         <a 
                           href={work.webLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest border border-ink text-white bg-ink px-4 py-2 hover:bg-zinc-800 transition-colors"
+                          onClick={(e) => handleWebPreview(e, work.webLink!)}
+                          className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest border border-ink text-white bg-ink px-4 py-2 hover:bg-zinc-800 transition-colors cursor-pointer"
                         >
                           Try Web App <Globe className="w-3 h-3" />
                         </a>
@@ -94,9 +105,34 @@ const FeaturedWorks: React.FC = () => {
               </div>
             ))}
           </div>
-
         </div>
       </div>
+
+      {/* Web Preview Modal */}
+      {activeWebPreview && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 md:p-8 animate-in fade-in duration-200">
+          <div className="bg-paper w-full max-w-6xl h-[85vh] rounded-xl overflow-hidden relative shadow-2xl flex flex-col border border-line">
+             <div className="flex justify-between items-center p-4 border-b border-line bg-paper">
+                <div className="flex items-center gap-2">
+                  <Globe className="w-4 h-4 text-accent" />
+                  <span className="font-bold text-ink text-sm uppercase tracking-widest">Live Preview</span>
+                </div>
+                <button 
+                  onClick={() => setActiveWebPreview(null)} 
+                  className="p-2 hover:bg-line/50 rounded-full transition-colors text-ink"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+             </div>
+             <iframe 
+                src={activeWebPreview} 
+                className="w-full h-full bg-white" 
+                title="Preview" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+             />
+          </div>
+        </div>
+      )}
     </section>
   );
 };

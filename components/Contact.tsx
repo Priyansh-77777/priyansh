@@ -33,7 +33,9 @@ const Contact: React.FC = () => {
 
             <div className="grid md:grid-cols-2 gap-6">
                <a 
-                href="#" 
+                href="https://in.linkedin.com/in/priyansh-shekhar-a3b212231" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group flex items-center gap-4 p-6 border border-line bg-white hover:border-ink transition-colors"
               >
                 <div className="w-8 h-8 bg-zinc-100 rounded-full flex items-center justify-center text-ink group-hover:bg-[#0077b5] group-hover:text-white transition-colors">

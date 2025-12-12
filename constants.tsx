@@ -27,56 +27,64 @@ export const FEATURED_WORKS: WorkItem[] = [
     title: "Nomm",
     category: "Personal Project",
     tags: ["Web App", "Food Discovery", "React"],
-    webLink: "https://nomm.vercel.app"
+    webLink: "https://nomm.vercel.app",
+    description: "The most insightful fitness tracker. Track meals, connect socially, and get AI-powered insights. Designed for people who want to achieve more with less effort."
   },
   { 
     title: "Kurukshetra: Ascension", 
     category: "Strategy RPG", 
     tags: ["Mythology", "Card Battler", "PVP"],
-    androidLink: "#",
-    iosLink: "#"
+    androidLink: "https://play.google.com/store/apps/details?hl=en_US&id=com.StudioSirah.KurukshetraAscension",
+    iosLink: "https://apps.apple.com/in/app/kurukshetra-ascension/id1601430224",
+    description: "A thrilling strategy card game inspired by millennia old Indian lore. Join epic battles and explore a captivating universe as legendary heroes reborn in the Age of Darkness, Kalyug."
   },
   { 
     title: "Snackula", 
     category: "AI-Native Game", 
     tags: ["GenAI Pipeline", "Casual", "0→1"],
-    androidLink: "#",
-    iosLink: "#"
+    androidLink: "https://play.google.com/store/apps/details?id=com.terrabyte.terra&hl=en_IN",
+    iosLink: "https://apps.apple.com/in/app/terra-limitless-gaming-world/id6450105686",
+    description: "You play the vampire. Progress depends on breaching human thresholds without force. Read social cues, steer dialogue toward voluntary invitation, and secure entry to feed."
   },
   { 
     title: "RedFlag.exe", 
     category: "Interactive Narrative", 
     tags: ["AI-Driven", "Simulation", "Mobile"],
-    androidLink: "#",
-    iosLink: "#"
+    androidLink: "https://play.google.com/store/apps/details?id=com.terrabyte.terra&hl=en_IN",
+    iosLink: "https://apps.apple.com/in/app/terra-limitless-gaming-world/id6450105686",
+    description: "A confined-space puzzle scenario built around conversational manipulation. Navigate a hostile partner’s verbal traps, decode embedded clues, and dismantle layered locks to exit."
   },
   { 
     title: "Commando Fire", 
     category: "Action Shooter", 
     tags: ["Multiplayer", "Real-time", "Live Ops"],
-    androidLink: "#",
-    iosLink: "#"
+    androidLink: "https://play.google.com/store/apps/details?id=com.terrabyte.terra&hl=en_IN",
+    iosLink: "https://apps.apple.com/in/app/terra-limitless-gaming-world/id6450105686",
+    description: "A fast-paced tactical FPS where players engage AI opponents across competitive maps. Includes multiplayer and single player vs AI modes. Inspired by Critical Strike."
   },
   { 
     title: "Cricket Legends", 
     category: "Sports Strategy", 
     tags: ["PvP", "Economy Design", "Sports"],
-    androidLink: "#",
-    iosLink: "#"
+    androidLink: "https://play.google.com/store/apps/details?id=com.terrabyte.terra&hl=en_IN",
+    iosLink: "https://apps.apple.com/in/app/terra-limitless-gaming-world/id6450105686",
+    description: "A scenario-driven cricket module centered on historic matches. Drop legendary cricketers into modern lineups to break momentum patterns and overturn match outcomes."
   },
   { 
     title: "Pro Football", 
     category: "Sports Action", 
     tags: ["Multiplayer", "Physics", "Growth"],
-    androidLink: "#",
-    iosLink: "#"
+    androidLink: "https://play.google.com/store/apps/details?id=com.terrabyte.terra&hl=en_IN",
+    iosLink: "https://apps.apple.com/in/app/terra-limitless-gaming-world/id6450105686",
+    description: "A streamlined mobile football title built around short matches, licensed clubs, and real-world squads. Focus on rapid flow, zero-friction matchmaking, and broadcast-style presentation."
   },
   { 
     title: "Cricket King Multiplayer", 
     category: "Gaming Ecosystem", 
     tags: ["Platform", "Social", "Scale"],
-    androidLink: "#",
-    iosLink: "#"
+    androidLink: "https://play.google.com/store/apps/details?id=com.terrabyte.terra&hl=en_IN",
+    iosLink: "https://apps.apple.com/in/app/terra-limitless-gaming-world/id6450105686",
+    description: "An arcade-style cricket simulation. Control batting, bowling, and fielding through intuitive touch controls. Features PvP multiplayer and a career mode unlocking Gully, State, National, and International cups."
   }
 ];
 
