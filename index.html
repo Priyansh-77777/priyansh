@@ -6,22 +6,21 @@
     <title>Priyansh Shekhar | Product Manager</title>
     <meta name="description" content="Product Manager experienced in AI-native products, high-velocity experimentation, and 0->1 execution." />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         theme: {
           extend: {
             fontFamily: {
               sans: ['Inter', 'sans-serif'],
+              serif: ['Playfair Display', 'serif'],
             },
             colors: {
-              brand: {
-                50: '#f0f9ff',
-                100: '#e0f2fe',
-                500: '#0ea5e9',
-                600: '#0284c7',
-                900: '#0c4a6e',
-              }
+              paper: '#F4F4F0', // The main light background
+              ink: '#111111',   // The main dark text
+              graphite: '#4A4A4A', // Secondary text
+              line: '#D1D1D1',  // Border lines
+              accent: '#2563EB', // Blue accent (kept but muted)
             }
           }
         }
@@ -29,22 +28,36 @@
     </script>
     <style>
       body {
-        background-color: #0f172a;
-        color: #f8fafc;
+        background-color: #F4F4F0;
+        color: #111111;
+        font-family: 'Inter', sans-serif;
       }
-      /* Custom scrollbar for webkit */
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Playfair Display', serif;
+      }
+      /* Custom scrollbar */
       ::-webkit-scrollbar {
         width: 8px;
       }
       ::-webkit-scrollbar-track {
-        background: #1e293b; 
+        background: #F4F4F0; 
       }
       ::-webkit-scrollbar-thumb {
-        background: #475569; 
+        background: #D1D1D1; 
         border-radius: 4px;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #64748b; 
+        background: #999; 
+      }
+      
+      .editorial-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+      @media (min-width: 1024px) {
+        .editorial-grid {
+          grid-template-columns: 350px 1fr;
+        }
       }
     </style>
 <script type="importmap">

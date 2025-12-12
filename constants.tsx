@@ -1,17 +1,10 @@
-import { Job, MetricData, NavigationItem, WorkItem } from './types';
+import { Job, MetricData, NavigationItem, WorkItem, CaseStudy } from './types';
 import { LayoutDashboard, Zap, Brain, TrendingUp } from 'lucide-react';
-
-// Standard Vite image imports - using explicit relative paths
-import snackulaImg from './snackula.png';
-import redflagImg from './redflag.png';
-import commandoImg from './commando.png';
-import cricketLegendsImg from './cricket-legends.png';
-import proFootballImg from './pro-football.png';
-import cricketMultiplayerImg from './cricket-multiplayer.png';
 
 export const NAV_ITEMS: NavigationItem[] = [
   { label: 'Impact', id: 'impact' },
   { label: 'Works', id: 'works' },
+  { label: 'Case Studies', id: 'case-studies' },
   { label: 'Experience', id: 'experience' },
   { label: 'Skills', id: 'skills' },
   { label: 'Contact', id: 'contact' },
@@ -30,41 +23,81 @@ export const HERO_DATA = {
 };
 
 export const FEATURED_WORKS: WorkItem[] = [
+  {
+    title: "Nomm",
+    category: "Personal Project",
+    tags: ["Web App", "Food Discovery", "React"],
+    webLink: "https://nomm.vercel.app"
+  },
+  { 
+    title: "Kurukshetra: Ascension", 
+    category: "Strategy RPG", 
+    tags: ["Mythology", "Card Battler", "PVP"],
+    androidLink: "#",
+    iosLink: "#"
+  },
   { 
     title: "Snackula", 
     category: "AI-Native Game", 
     tags: ["GenAI Pipeline", "Casual", "0→1"],
-    image: snackulaImg
+    androidLink: "#",
+    iosLink: "#"
   },
   { 
     title: "RedFlag.exe", 
     category: "Interactive Narrative", 
     tags: ["AI-Driven", "Simulation", "Mobile"],
-    image: redflagImg 
+    androidLink: "#",
+    iosLink: "#"
   },
   { 
     title: "Commando Fire", 
     category: "Action Shooter", 
     tags: ["Multiplayer", "Real-time", "Live Ops"],
-    image: commandoImg 
+    androidLink: "#",
+    iosLink: "#"
   },
   { 
     title: "Cricket Legends", 
     category: "Sports Strategy", 
     tags: ["PvP", "Economy Design", "Sports"],
-    image: cricketLegendsImg 
+    androidLink: "#",
+    iosLink: "#"
   },
   { 
     title: "Pro Football", 
     category: "Sports Action", 
     tags: ["Multiplayer", "Physics", "Growth"],
-    image: proFootballImg 
+    androidLink: "#",
+    iosLink: "#"
   },
   { 
-    title: "Cricket Multi", 
+    title: "Cricket King Multiplayer", 
     category: "Gaming Ecosystem", 
     tags: ["Platform", "Social", "Scale"],
-    image: cricketMultiplayerImg 
+    androidLink: "#",
+    iosLink: "#"
+  }
+];
+
+export const CASE_STUDIES: CaseStudy[] = [
+  {
+      title: "Scaling Retention via AI Narratives",
+      category: "Growth & Retention",
+      summary: "How we leveraged GenAI to create personalized micro-dramas and story arcs, improving D7 retention by 10% in mid-core titles.",
+      link: "#"
+  },
+  {
+      title: "Optimizing the FTUE Funnel",
+      category: "UX Research",
+      summary: "A deep dive into reducing drop-offs by 40% through behavioral cohort analysis and simplifying complex UI flows for casual users.",
+      link: "#"
+  },
+  {
+      title: "Economy Balancing for PVP",
+      category: "Game Economy",
+      summary: "Restructuring the sink/source economy in a multiplayer strategy game to prevent hyperinflation and boost long-term LTV.",
+      link: "#"
   }
 ];
 

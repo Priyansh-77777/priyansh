@@ -4,48 +4,63 @@ import { HERO_DATA } from '../constants';
 
 const Contact: React.FC = () => {
   return (
-    <footer id="contact" className="bg-slate-950 border-t border-slate-900 pt-20 pb-10 px-6">
-      <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl font-bold text-white mb-6">Let's Build Something Great</h2>
-        <p className="text-slate-400 mb-10 max-w-xl mx-auto">
-          I'm currently looking for Product Management roles where I can leverage my experience in AI, 0→1 execution, and growth loops.
-        </p>
+    <footer id="contact" className="bg-paper pt-20 pb-10 px-6 md:px-12">
+      <div className="max-w-[1400px] mx-auto">
         
-        <div className="flex flex-col md:flex-row justify-center gap-6 mb-16">
-          <a href={`mailto:${HERO_DATA.contact.email}`} className="flex items-center justify-center gap-3 px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-semibold transition-all shadow-lg shadow-blue-900/20">
-            <Mail className="w-5 h-5" />
-            Send Email
-          </a>
-          <button onClick={() => window.print()} className="flex items-center justify-center gap-3 px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 rounded-lg font-medium transition-all">
-            <Download className="w-5 h-5" />
-            Download Resume
-          </button>
+        <div className="grid lg:grid-cols-2 gap-20 mb-20 border-b border-line pb-20">
+          <div>
+            <h2 className="text-6xl md:text-8xl font-serif text-ink mb-8 leading-[0.9]">
+              Let's <br /> <span className="italic text-graphite">Connect</span>
+            </h2>
+            <p className="text-lg text-graphite max-w-md">
+               I'm currently looking for Product Management roles where I can leverage my experience in AI, 0→1 execution, and growth loops.
+            </p>
+          </div>
+
+          <div className="flex flex-col justify-center gap-6">
+            <a 
+              href={`mailto:${HERO_DATA.contact.email}`} 
+              className="group flex items-center justify-between p-8 border border-line bg-white hover:border-ink transition-colors"
+            >
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 bg-zinc-100 rounded-full flex items-center justify-center text-ink group-hover:bg-ink group-hover:text-white transition-colors">
+                  <Mail className="w-5 h-5" />
+                </div>
+                <span className="text-xl font-medium text-ink">{HERO_DATA.contact.email}</span>
+              </div>
+              <span className="text-sm font-bold uppercase tracking-widest text-graphite group-hover:text-ink">Email Me</span>
+            </a>
+
+            <div className="grid md:grid-cols-2 gap-6">
+               <a 
+                href="#" 
+                className="group flex items-center gap-4 p-6 border border-line bg-white hover:border-ink transition-colors"
+              >
+                <div className="w-8 h-8 bg-zinc-100 rounded-full flex items-center justify-center text-ink group-hover:bg-[#0077b5] group-hover:text-white transition-colors">
+                  <Linkedin className="w-4 h-4" />
+                </div>
+                <span className="font-medium text-ink">LinkedIn</span>
+              </a>
+
+              <a 
+                href="#" 
+                className="group flex items-center gap-4 p-6 border border-line bg-white hover:border-ink transition-colors"
+              >
+                <div className="w-8 h-8 bg-zinc-100 rounded-full flex items-center justify-center text-ink group-hover:bg-green-600 group-hover:text-white transition-colors">
+                  <Phone className="w-4 h-4" />
+                </div>
+                <span className="font-medium text-ink">{HERO_DATA.contact.phone}</span>
+              </a>
+            </div>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-slate-400 text-sm mb-12 max-w-2xl mx-auto border-t border-slate-900 pt-8">
-          <div className="flex flex-col items-center gap-2">
-            <div className="w-10 h-10 bg-slate-900 rounded-full flex items-center justify-center text-blue-500">
-              <Mail className="w-5 h-5" />
-            </div>
-            <span>{HERO_DATA.contact.email}</span>
+        <div className="flex flex-col md:flex-row justify-between items-center text-xs font-mono text-graphite uppercase tracking-wider">
+          <p>&copy; {new Date().getFullYear()} Priyansh Shekhar.</p>
+          <div className="flex gap-8 mt-4 md:mt-0">
+             <span>Bengaluru, India</span>
+             <span>Product Portfolio</span>
           </div>
-          <div className="flex flex-col items-center gap-2">
-            <div className="w-10 h-10 bg-slate-900 rounded-full flex items-center justify-center text-green-500">
-              <Phone className="w-5 h-5" />
-            </div>
-            <span>{HERO_DATA.contact.phone}</span>
-          </div>
-          <div className="flex flex-col items-center gap-2">
-             <div className="w-10 h-10 bg-slate-900 rounded-full flex items-center justify-center text-purple-500">
-              <Linkedin className="w-5 h-5" />
-            </div>
-            <a href="#" className="hover:text-white transition-colors">LinkedIn Profile</a>
-          </div>
-        </div>
-
-        <div className="text-slate-600 text-xs">
-          <p>&copy; {new Date().getFullYear()} Priyansh Shekhar. All rights reserved.</p>
-          <p className="mt-2">Designed with React, Tailwind, and D3.</p>
         </div>
       </div>
     </footer>

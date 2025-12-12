@@ -1,80 +1,100 @@
 import React from 'react';
-import { Gamepad2, Trophy, Smartphone, ArrowUpRight } from 'lucide-react';
+import { Gamepad2, Trophy, Smartphone, ArrowUpRight, Globe } from 'lucide-react';
 import { FEATURED_WORKS } from '../constants';
 
 const FeaturedWorks: React.FC = () => {
-  const getIcon = (category: string) => {
-    if (category.toLowerCase().includes('sport')) return <Trophy className="w-8 h-8 text-yellow-400" />;
-    if (category.toLowerCase().includes('mobile')) return <Smartphone className="w-8 h-8 text-blue-400" />;
-    return <Gamepad2 className="w-8 h-8 text-purple-400" />;
-  };
-
   return (
-    <section id="works" className="py-20 px-6 md:px-12 bg-slate-950">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
-          <div>
-            <h2 className="text-3xl font-bold text-white mb-4">Featured Products</h2>
-            <p className="text-slate-400 max-w-2xl">
-              A selection of high-impact games and products I've managed from 0→1 to scale.
-            </p>
-          </div>
-          <div className="hidden md:block h-px flex-1 bg-slate-800 ml-8 relative top-[-10px]"></div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {FEATURED_WORKS.map((work, idx) => (
-            <div 
-              key={idx}
-              className="group relative bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-slate-600 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-900/10 flex flex-col"
-            >
-              {/* Aspect Ratio 4/5 for Game Covers */}
-              <div className="relative aspect-[4/5] w-full overflow-hidden bg-slate-800">
-                {work.image ? (
-                  <>
-                    <img 
-                      src={work.image} 
-                      alt={work.title} 
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-10 group-hover:opacity-0 transition-opacity"></div>
-                  </>
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center bg-slate-800">
-                    {getIcon(work.category)}
-                  </div>
-                )}
-                
-                <div className="absolute top-4 right-4 bg-slate-900/80 backdrop-blur-sm p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0 shadow-lg border border-slate-700">
-                  <ArrowUpRight className="w-5 h-5 text-white" />
-                </div>
-              </div>
-
-              <div className="p-6 flex flex-col flex-1 border-t border-slate-800">
-                <div className="flex items-start justify-between mb-2">
-                   <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
-                    {work.title}
-                  </h3>
-                </div>
-                
-                <div className="text-sm font-medium text-slate-500 mb-6 uppercase tracking-wider flex items-center gap-2">
-                  {!work.image && React.cloneElement(getIcon(work.category) as any, { className: "w-4 h-4" })}
-                  {work.category}
-                </div>
-
-                <div className="flex flex-wrap gap-2 mt-auto">
-                  {work.tags.map((tag, tIdx) => (
-                    <span 
-                      key={tIdx} 
-                      className="px-2.5 py-1 text-xs font-medium rounded-full bg-slate-800 text-slate-300 border border-slate-700 group-hover:border-slate-600 transition-colors"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
+    <section id="works" className="bg-paper border-b border-line">
+      <div className="max-w-[1400px] mx-auto">
+        <div className="flex flex-col lg:flex-row">
+          
+          {/* Left Column - Sticky Header */}
+          <div className="lg:w-[350px] lg:shrink-0 lg:border-r border-line p-6 md:p-12 lg:h-screen lg:sticky lg:top-0 flex flex-col justify-between">
+            <div>
+              <span className="text-xs font-bold uppercase tracking-widest text-graphite mb-4 block">02 — Portfolio</span>
+              <h2 className="text-5xl font-serif font-medium text-ink mb-6 leading-none">
+                Selected <br /> <span className="italic text-graphite">Works</span>
+              </h2>
+              <p className="text-graphite text-sm leading-relaxed max-w-xs">
+                From casual mobile hits to AI-native narratives.
+              </p>
             </div>
-          ))}
+            
+            <div className="hidden lg:block text-xs text-graphite font-mono">
+              SCROLL TO EXPLORE ↓
+            </div>
+          </div>
+
+          {/* Right Column - Typographic List */}
+          <div className="flex-1">
+            {FEATURED_WORKS.map((work, idx) => (
+              <div 
+                key={idx}
+                className="group relative border-b border-line last:border-b-0 transition-colors hover:bg-white"
+              >
+                <div className="p-8 md:p-12 flex flex-col md:flex-row md:items-center justify-between gap-8">
+                  {/* Title & Category */}
+                  <div className="md:w-1/2">
+                    <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-graphite mb-3">
+                       <span className="w-2 h-2 rounded-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                       {work.category}
+                    </div>
+                    <h3 className="text-4xl md:text-5xl font-serif text-ink group-hover:translate-x-2 transition-transform duration-300">
+                      {work.title}
+                    </h3>
+                  </div>
+
+                  {/* Metadata & Action */}
+                  <div className="md:w-1/2 flex flex-col md:items-end gap-6">
+                    <div className="flex flex-wrap gap-2 md:justify-end">
+                      {work.tags.map((tag, tIdx) => (
+                        <span 
+                          key={tIdx} 
+                          className="px-3 py-1 text-[10px] font-bold uppercase tracking-wider border border-line rounded-full text-graphite bg-zinc-50 group-hover:bg-white group-hover:border-graphite transition-colors"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    
+                    <div className="flex flex-wrap justify-end gap-3 opacity-80 group-hover:opacity-100 transition-opacity">
+                      {work.webLink && (
+                        <a 
+                          href={work.webLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest border border-ink text-white bg-ink px-4 py-2 hover:bg-zinc-800 transition-colors"
+                        >
+                          Try Web App <Globe className="w-3 h-3" />
+                        </a>
+                      )}
+                      {(work.androidLink || work.iosLink) && (
+                         <div className="flex gap-2">
+                             {work.androidLink && (
+                                <a 
+                                  href={work.androidLink} 
+                                  className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest border border-line text-ink px-4 py-2 hover:border-ink transition-colors"
+                                >
+                                  Android <Smartphone className="w-3 h-3" />
+                                </a>
+                             )}
+                             {work.iosLink && (
+                                <a 
+                                  href={work.iosLink} 
+                                  className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest border border-line text-ink px-4 py-2 hover:border-ink transition-colors"
+                                >
+                                  iOS <Smartphone className="w-3 h-3" />
+                                </a>
+                             )}
+                         </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
         </div>
       </div>
     </section>

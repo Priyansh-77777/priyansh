@@ -31,4 +31,14 @@ export interface WorkItem {
   category: string;
   tags: string[];
   image?: string;
+  androidLink?: string;
+  iosLink?: string;
+  webLink?: string;
+}
+
+export interface CaseStudy {
+  title: string;
+  category: string;
+  summary: string;
+  link: string;
 }

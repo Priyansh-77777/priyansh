@@ -15,31 +15,31 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-50 selection:bg-blue-500/30">
+    <div className="min-h-screen bg-paper text-ink selection:bg-black selection:text-white">
       <nav 
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
-          isScrolled ? 'bg-slate-950/80 backdrop-blur-md border-slate-800 py-4' : 'bg-transparent border-transparent py-6'
+          isScrolled ? 'bg-paper/90 backdrop-blur-md border-line py-4' : 'bg-transparent border-transparent py-6'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-          <div className="text-xl font-bold tracking-tight">
-            Priyansh<span className="text-blue-500">.</span>
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex items-center justify-between">
+          <div className="text-2xl font-serif font-bold tracking-tight text-ink">
+            Priyansh<span className="text-accent">.</span>
           </div>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-10">
             {NAV_ITEMS.map((item) => (
               <a 
                 key={item.id} 
                 href={`#${item.id}`} 
-                className="text-sm font-medium text-slate-400 hover:text-white transition-colors"
+                className="text-sm font-medium text-graphite hover:text-ink transition-colors uppercase tracking-widest text-[11px]"
               >
                 {item.label}
               </a>
             ))}
             <a 
               href="#contact" 
-              className="px-4 py-2 bg-slate-100 text-slate-900 rounded font-semibold text-sm hover:bg-white transition-colors"
+              className="px-6 py-2 bg-ink text-white rounded-full font-medium text-sm hover:bg-zinc-800 transition-colors"
             >
               Hire Me
             </a>
@@ -47,7 +47,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
           {/* Mobile Toggle */}
           <button 
-            className="md:hidden text-slate-300"
+            className="md:hidden text-ink"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X /> : <Menu />}
@@ -56,13 +56,13 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="absolute top-full left-0 w-full bg-slate-900 border-b border-slate-800 p-6 md:hidden flex flex-col gap-4 shadow-2xl">
+          <div className="absolute top-full left-0 w-full bg-paper border-b border-line p-6 md:hidden flex flex-col gap-6 shadow-xl">
             {NAV_ITEMS.map((item) => (
               <a 
                 key={item.id} 
                 href={`#${item.id}`}
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-lg font-medium text-slate-300 hover:text-white"
+                className="text-2xl font-serif font-medium text-ink hover:text-accent"
               >
                 {item.label}
               </a>
@@ -71,7 +71,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         )}
       </nav>
 
-      <main>
+      <main className="pt-24">
         {children}
       </main>
     </div>

@@ -14,13 +14,13 @@ import { RETENTION_DATA, HIGHLIGHTS } from '../constants';
 const CustomTooltip = ({ active, payload, label }: any) => {
   if (active && payload && payload.length) {
     return (
-      <div className="bg-slate-800 border border-slate-700 p-4 rounded-lg shadow-xl">
-        <p className="text-slate-200 font-bold mb-2">{label}</p>
-        <p className="text-slate-400 text-sm">
-          Before: <span className="text-red-400">{payload[0].payload.before}%</span>
+      <div className="bg-white border border-line p-4 shadow-xl">
+        <p className="text-ink font-serif font-bold mb-2 text-lg">{label}</p>
+        <p className="text-graphite text-sm border-b border-line pb-2 mb-2">
+          Before: <span className="text-red-500 font-mono">{payload[0].payload.before}%</span>
         </p>
-        <p className="text-white font-medium text-lg">
-          After: <span className="text-green-400">{payload[0].payload.after}%</span>
+        <p className="text-ink font-medium text-base">
+          After: <span className="text-green-600 font-mono">{payload[0].payload.after}%</span>
         </p>
       </div>
     );
@@ -30,64 +30,86 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 
 const ImpactMetrics: React.FC = () => {
   return (
-    <section id="impact" className="py-20 px-6 md:px-12 bg-slate-900 border-y border-slate-800">
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-12">
-          <h2 className="text-3xl font-bold text-white mb-4">Quantifiable Impact</h2>
-          <p className="text-slate-400 max-w-2xl">
-            My product philosophy is simple: measure, experiment, iterate. Here are key outcomes from my time at Terra and Studio Sirah.
-          </p>
-        </div>
-
-        {/* Highlights Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {HIGHLIGHTS.map((item, idx) => (
-            <div key={idx} className="bg-slate-800/50 border border-slate-700 p-6 rounded-xl hover:bg-slate-800 transition-colors">
-              <div className="bg-slate-900 w-12 h-12 rounded-lg flex items-center justify-center mb-4 border border-slate-700">
-                {item.icon}
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-              <p className="text-slate-400 text-sm">{item.desc}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* Chart Section */}
-        <div className="bg-slate-800/30 border border-slate-700 rounded-2xl p-8">
-          <div className="mb-8">
-            <h3 className="text-xl font-bold text-white">Core Retention Improvement (Terra)</h3>
-            <p className="text-slate-400 text-sm">Comparison of key health metrics before and after product interventions.</p>
-          </div>
+    <section id="impact" className="border-b border-line">
+      <div className="max-w-[1400px] mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-4">
           
-          <div className="w-full h-[400px]" style={{ minHeight: '400px' }}>
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart
-                data={RETENTION_DATA}
-                margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
-                barSize={40}
-              >
-                <CartesianGrid strokeDasharray="3 3" stroke="#334155" vertical={false} />
-                <XAxis 
-                  dataKey="name" 
-                  stroke="#94a3b8" 
-                  tick={{fill: '#94a3b8'}} 
-                  axisLine={{stroke: '#475569'}}
-                />
-                <YAxis 
-                  stroke="#94a3b8" 
-                  tick={{fill: '#94a3b8'}} 
-                  axisLine={{stroke: '#475569'}}
-                  unit="%"
-                />
-                <Tooltip content={<CustomTooltip />} cursor={{fill: '#1e293b'}} />
-                <Bar dataKey="before" fill="#ef4444" radius={[4, 4, 0, 0]} name="Before" />
-                <Bar dataKey="after" fill="#22c55e" radius={[4, 4, 0, 0]} name="After">
-                  {RETENTION_DATA.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={index === 0 ? '#3b82f6' : index === 1 ? '#8b5cf6' : '#10b981'} />
-                  ))}
-                </Bar>
-              </BarChart>
-            </ResponsiveContainer>
+          {/* Section Title Sidebar */}
+          <div className="p-6 md:p-12 border-b lg:border-b-0 lg:border-r border-line lg:sticky lg:top-24 h-fit">
+            <span className="text-xs font-bold uppercase tracking-widest text-graphite mb-4 block">01 — Impact</span>
+            <h2 className="text-4xl font-serif font-medium text-ink mb-6">
+              Quantifiable <br /> <span className="italic text-graphite">Outcomes</span>
+            </h2>
+            <p className="text-graphite text-sm leading-relaxed">
+              My philosophy: Measure, experiment, iterate. Data from live products.
+            </p>
+          </div>
+
+          {/* Content Area */}
+          <div className="lg:col-span-3">
+            {/* Highlights Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2">
+              {HIGHLIGHTS.map((item, idx) => (
+                <div key={idx} className={`p-8 md:p-12 border-b border-line ${idx % 2 === 0 ? 'md:border-r' : ''} hover:bg-white transition-colors duration-500`}>
+                  <div className="mb-6 text-ink">
+                    {React.cloneElement(item.icon as any, { className: "w-8 h-8", strokeWidth: 1.5 })}
+                  </div>
+                  <h3 className="text-2xl font-serif font-medium text-ink mb-2">{item.title}</h3>
+                  <p className="text-graphite font-light">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Chart Section */}
+            <div className="p-8 md:p-12 bg-white/50">
+              <div className="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
+                <div>
+                  <h3 className="text-xl font-bold text-ink">Core Retention Improvement</h3>
+                  <p className="text-graphite text-sm">Terra Game Studio Metrics (2024-2025)</p>
+                </div>
+                <div className="flex gap-4 text-xs font-mono">
+                   <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 bg-zinc-300"></div> Before
+                   </div>
+                   <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 bg-ink"></div> After
+                   </div>
+                </div>
+              </div>
+              
+              <div className="w-full h-[400px]">
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart
+                    data={RETENTION_DATA}
+                    margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+                    barSize={60}
+                  >
+                    <CartesianGrid strokeDasharray="3 3" stroke="#e5e5e5" vertical={false} />
+                    <XAxis 
+                      dataKey="name" 
+                      stroke="#4a4a4a" 
+                      tick={{fill: '#4a4a4a', fontFamily: 'Inter'}} 
+                      axisLine={{stroke: '#e5e5e5'}}
+                      tickLine={false}
+                    />
+                    <YAxis 
+                      stroke="#4a4a4a" 
+                      tick={{fill: '#4a4a4a', fontFamily: 'Inter'}} 
+                      axisLine={false}
+                      tickLine={false}
+                      unit="%"
+                    />
+                    <Tooltip content={<CustomTooltip />} cursor={{fill: '#f4f4f0'}} />
+                    <Bar dataKey="before" fill="#d4d4d8" radius={[0, 0, 0, 0]} animationDuration={1500} />
+                    <Bar dataKey="after" fill="#111111" radius={[0, 0, 0, 0]} animationDuration={1500}>
+                      {RETENTION_DATA.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill="#111111" />
+                      ))}
+                    </Bar>
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
           </div>
         </div>
       </div>
