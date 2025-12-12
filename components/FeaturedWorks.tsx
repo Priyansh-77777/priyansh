@@ -1,40 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Gamepad2, Trophy, Smartphone, ArrowUpRight } from 'lucide-react';
 import { FEATURED_WORKS } from '../constants';
-
-const ImageWithFallback = ({ src, alt, className }: { src: string, alt: string, className?: string }) => {
-  const [imgSrc, setImgSrc] = useState(src);
-  const [attempt, setAttempt] = useState(0);
-
-  const handleError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-    const target = e.target as HTMLImageElement;
-    console.warn(`Failed to load image at: ${target.src}`);
-
-    if (attempt === 0) {
-      // First retry: Try removing the dotslash if it exists, or adding slash to ensure root relative
-      // If original was "./image.png", try "/image.png"
-      const cleanName = src.startsWith('./') ? src.substring(1) : src;
-      const newSrc = cleanName.startsWith('/') ? cleanName : `/${cleanName}`;
-      
-      console.log(`Retrying with: ${newSrc}`);
-      setImgSrc(newSrc);
-      setAttempt(1);
-    } else {
-      // Final fallback
-      console.error(`Give up. Using placeholder for ${alt}`);
-      setImgSrc(`https://placehold.co/600x750/1e293b/475569?text=${encodeURIComponent(alt)}`);
-    }
-  };
-
-  return (
-    <img 
-      src={imgSrc} 
-      alt={alt} 
-      onError={handleError}
-      className={className}
-    />
-  );
-};
 
 const FeaturedWorks: React.FC = () => {
   const getIcon = (category: string) => {
@@ -66,9 +32,9 @@ const FeaturedWorks: React.FC = () => {
               <div className="relative aspect-[4/5] w-full overflow-hidden bg-slate-800">
                 {work.image ? (
                   <>
-                    <ImageWithFallback 
+                    <img 
                       src={work.image} 
-                      alt={work.title}
+                      alt={work.title} 
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-10 group-hover:opacity-0 transition-opacity"></div>
