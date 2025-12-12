@@ -28,6 +28,7 @@ export const FEATURED_WORKS: WorkItem[] = [
     category: "Personal Project",
     tags: ["Web App", "Food Discovery", "React"],
     webLink: "https://nomm.vercel.app",
+    image: "https://i.ibb.co/3YGTj77k/Screenshot-2025-12-13-at-12-38-32-AM.png",
     description: "The most insightful fitness tracker. Track meals, connect socially, and get AI-powered insights. Designed for people who want to achieve more with less effort."
   },
   { 
@@ -36,6 +37,7 @@ export const FEATURED_WORKS: WorkItem[] = [
     tags: ["Mythology", "Card Battler", "PVP"],
     androidLink: "https://play.google.com/store/apps/details?hl=en_US&id=com.StudioSirah.KurukshetraAscension",
     iosLink: "https://apps.apple.com/in/app/kurukshetra-ascension/id1601430224",
+    image: "https://i.ibb.co/35TdqX1F/kurukshetra.webp",
     description: "A thrilling strategy card game inspired by millennia old Indian lore. Join epic battles and explore a captivating universe as legendary heroes reborn in the Age of Darkness, Kalyug."
   },
   { 
@@ -44,6 +46,7 @@ export const FEATURED_WORKS: WorkItem[] = [
     tags: ["GenAI Pipeline", "Casual", "0→1"],
     androidLink: "https://play.google.com/store/apps/details?id=com.terrabyte.terra&hl=en_IN",
     iosLink: "https://apps.apple.com/in/app/terra-limitless-gaming-world/id6450105686",
+    image: "https://i.ibb.co/RpjS7WrX/snackula.jpg", 
     description: "You play the vampire. Progress depends on breaching human thresholds without force. Read social cues, steer dialogue toward voluntary invitation, and secure entry to feed."
   },
   { 
@@ -52,6 +55,7 @@ export const FEATURED_WORKS: WorkItem[] = [
     tags: ["AI-Driven", "Simulation", "Mobile"],
     androidLink: "https://play.google.com/store/apps/details?id=com.terrabyte.terra&hl=en_IN",
     iosLink: "https://apps.apple.com/in/app/terra-limitless-gaming-world/id6450105686",
+    image: "https://i.ibb.co/Vhc0cJj/Red-Flag.png",
     description: "A confined-space puzzle scenario built around conversational manipulation. Navigate a hostile partner’s verbal traps, decode embedded clues, and dismantle layered locks to exit."
   },
   { 
@@ -60,6 +64,7 @@ export const FEATURED_WORKS: WorkItem[] = [
     tags: ["Multiplayer", "Real-time", "Live Ops"],
     androidLink: "https://play.google.com/store/apps/details?id=com.terrabyte.terra&hl=en_IN",
     iosLink: "https://apps.apple.com/in/app/terra-limitless-gaming-world/id6450105686",
+    image: "https://i.ibb.co/bg9WhCnF/Commando.png",
     description: "A fast-paced tactical FPS where players engage AI opponents across competitive maps. Includes multiplayer and single player vs AI modes. Inspired by Critical Strike."
   },
   { 
@@ -68,6 +73,7 @@ export const FEATURED_WORKS: WorkItem[] = [
     tags: ["PvP", "Economy Design", "Sports"],
     androidLink: "https://play.google.com/store/apps/details?id=com.terrabyte.terra&hl=en_IN",
     iosLink: "https://apps.apple.com/in/app/terra-limitless-gaming-world/id6450105686",
+    image: "https://i.ibb.co/JF0FBYSt/Cricket-Legends.png",
     description: "A scenario-driven cricket module centered on historic matches. Drop legendary cricketers into modern lineups to break momentum patterns and overturn match outcomes."
   },
   { 
@@ -76,6 +82,7 @@ export const FEATURED_WORKS: WorkItem[] = [
     tags: ["Multiplayer", "Physics", "Growth"],
     androidLink: "https://play.google.com/store/apps/details?id=com.terrabyte.terra&hl=en_IN",
     iosLink: "https://apps.apple.com/in/app/terra-limitless-gaming-world/id6450105686",
+    image: "https://i.ibb.co/23v9mdHt/Football.png",
     description: "A streamlined mobile football title built around short matches, licensed clubs, and real-world squads. Focus on rapid flow, zero-friction matchmaking, and broadcast-style presentation."
   },
   { 
@@ -84,6 +91,7 @@ export const FEATURED_WORKS: WorkItem[] = [
     tags: ["Platform", "Social", "Scale"],
     androidLink: "https://play.google.com/store/apps/details?id=com.terrabyte.terra&hl=en_IN",
     iosLink: "https://apps.apple.com/in/app/terra-limitless-gaming-world/id6450105686",
+    image: "https://i.ibb.co/Jjn5wx2n/Cricket-Multiplayer.png",
     description: "An arcade-style cricket simulation. Control batting, bowling, and fielding through intuitive touch controls. Features PvP multiplayer and a career mode unlocking Gully, State, National, and International cups."
   }
 ];
@@ -97,8 +105,8 @@ export const EXPERIENCE_DATA: Job[] = [
     tags: ["AI-Native", "Leadership", "0→1"],
     achievements: [
       "Scaled production velocity 3× (from 5 games/12 weeks to 5 games/4 weeks) by optimizing pipelines.",
-      "Product Owner for AI-native hits 'Crazy Girlfriend' & 'Snakula'.",
-      "Built an AI-generated micro-drama pipeline enabling automated narrative A/B testing.",
+      "Product Owner for AI-native hits 'Crazy Girlfriend' & 'Snackula'.",
+      "Built an AI-generated micro-drama pipeline enabling automated micro-drama series generation via minimal input and utmost consistencies.",
       "Owned PRDs, specs, and metrics for products with 4,000+ DAU."
     ],
     metrics: [
@@ -176,6 +184,91 @@ export const HIGHLIGHTS = [
 ];
 
 export const CASE_STUDIES: CaseStudyDetail[] = [
+  {
+    id: "clash-royale-economy",
+    title: "Inside Clash Royale’s Economy: How Supercell Uses Math, Psychology & Design to Drive Progression",
+    category: "Deconstruction",
+    summary: "A data-first breakdown of Clash Royale’s economy — analyzing currencies, upgrade costs, Pass Royale value, and the math behind retention loops.",
+    role: "Product Analysis",
+    focus: "Economy Design & Retention",
+    scope: "System Deconstruction",
+    sections: [
+      {
+        type: 'image',
+        src: "https://i.ibb.co/5fHpzzd/Chat-GPT-Image-Dec-13-2025-01-15-21-AM.png",
+        alt: "Clash Royale Economy Flowchart",
+        caption: "The Flow of Value in Clash Royale"
+      },
+      {
+        type: 'text',
+        heading: 'Inside the Economy of Clash Royale',
+        content: "Clash Royale isn’t just a PvP strategy game — it’s one of the world’s most profitable mobile games, generating over $3 billion in lifetime revenue and still pulling millions of daily active players nearly a decade after launch. That longevity is powered by a meticulously tuned game economy—one that blends psychology, math, and long-term retention design. This article deconstructs Clash Royale’s economy, focusing on the numerical balance between player progression and monetization."
+      },
+      {
+        type: 'text',
+        heading: '1. The Currency Triangle: How Players Actually Progress',
+        content: "Clash Royale revolves around three major economic pillars:"
+      },
+      {
+        type: 'list',
+        items: [
+          "**Gems — The Premium Accelerator**: Players earn around 5–20 gems per week from free rewards. A shop chest skip costs 18–36 gems. Pass Royale costs $5.99 USD. Gems are designed as a premium bottleneck-breaker.",
+          "**Gold — The Main Progression Bottleneck**: Gold is the largest friction point. Upgrading a Common card from Level 1 → 11 costs roughly 75,000 gold total. Level 1 → 14 costs ≈ 175,000 gold. A full deck requires over **1 million gold** to max out.",
+          "**Cards, Wild Cards & Magic Items**: Rarity determines friction. A Common card needs 5,693 copies to max; a Legendary needs 36. This randomness is why Supercell introduced Wild Cards and Magic Books to allow precise control."
+        ]
+      },
+      {
+        type: 'text',
+        heading: '2. The Reward Plumbing: Inputs & Outputs',
+        content: "To understand the economy, you need to look at inputs—what the game gives you."
+      },
+      {
+        type: 'list',
+        items: [
+          "**Daily Inputs**: A typical player earns 600–1,000 gold, 20–50 cards, and 1–3 gems daily. This is tuned so F2P players feel progress but cannot max decks quickly.",
+          "**Seasonal Inputs (28 Days)**: A season gives a F2P player ~20k gold and 1000+ cards. Pass Royale owners typically earn **2–3× more total value** (equivalent to $20–30 worth of items for $5.99). This massive value imbalance is intentional."
+        ]
+      },
+      {
+        type: 'text',
+        heading: '3. Pass Royale & Shop Offers',
+        content: "Pass Royale is Supercell's highest converting product for a reason. It provides 20k–30k gold, 100+ wild cards, magic items, and cosmetics. If bought individually via gems, these items would cost **$10–$15 USD**. At $5.99, the Pass is an undeniable anchor."
+      },
+      {
+        type: 'list',
+        heading: 'Psychological Anchors',
+        items: [
+          "**Gold/Gem Conversion**: The direct shop rate is inefficient, making bundles look better.",
+          "**Bundle Perceived Value**: Bundles often claim '3x Value' or '5x Value' to drive impulse buys.",
+          "**Urgency**: Rotating shop timers create FOMO (Fear Of Missing Out)."
+        ]
+      },
+      {
+        type: 'text',
+        heading: '4. Upgrade Cost Curves: The Invisible Mathematical Hand',
+        content: "The upgrade curve is the core retention lever. Level 12 → 13 common upgrade costs 50,000 gold. Level 13 → 14 doubles to 100,000 gold. This exponential growth ensures that even as players earn more, they stay gold-starved, necessitating long-term sinks like the Level 15 shards update."
+      },
+      {
+        type: 'segments',
+        heading: '5. Player Segments',
+        items: [
+          "**Free-to-Play**: Plays 30–60 mins/day. The game must feel fair enough to keep them engaged as content for paid players, while progress remains slow.",
+          "**Dolphins ($5–15/mo)**: Regular small spenders, typically buying Pass Royale. They represent 30–40% of revenue and seek efficiency.",
+          "**Whales ($100+/mo)**: The top 1–2% contributing 50%+ of revenue. The economy allows them to pay for velocity without breaking the core competitive balance."
+        ]
+      },
+      {
+        type: 'text',
+        heading: '6. Engagement vs. Monetization',
+        content: "Supercell operates on a finely tuned formula: If progression is too fast, top players max out and churn. If progression is too slow, mid-tier players quit out of frustration. The game aims to keep most players at 50–70% completion of total progression. This ensures long-term retention, predictable spending behavior, and a stable competitive environment. Supercell’s economy team is constantly patching numbers to maintain this curve."
+      },
+      {
+        type: 'highlight',
+        heading: 'Conclusion',
+        content: "Clash Royale isn't just a game. It's an economy-driven experience engineered to feel rewarding, fair, and infinite. Maxing a legendary deck can take years, yet players stay because the next upgrade always feels just within reach."
+      }
+    ]
+  },
   {
     id: "onboarding-funnel",
     title: "Rebuilding an Onboarding Funnel by Converting Ambiguity into Measurable Events",

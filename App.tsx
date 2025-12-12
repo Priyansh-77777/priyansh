@@ -16,7 +16,9 @@ function App() {
 
   // Handle scroll to top when view changes
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // Force instant scroll to top when changing views to prevent
+    // slow scrolling due to html { scroll-behavior: smooth }
+    window.scrollTo({ top: 0, behavior: 'instant' });
   }, [view, activeCaseStudyId]);
 
   const handleCaseStudySelect = (id: string) => {

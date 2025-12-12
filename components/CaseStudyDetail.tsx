@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ArrowLeft, Clock, Target, Users, Map } from 'lucide-react';
+import { ArrowLeft, Clock, Target, Users, Map, ZoomIn } from 'lucide-react';
 import { CaseStudyDetail } from '../types';
 
 interface Props {
@@ -21,6 +21,18 @@ const CaseStudyDetailView: React.FC<Props> = ({ data, onBack }) => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Helper to parse basic bold formatting **text**
+  const parseContent = (text: string) => {
+    if (!text) return null;
+    const parts = text.split(/(\*\*.*?\*\*)/g);
+    return parts.map((part, index) => {
+      if (part.startsWith('**') && part.endsWith('**')) {
+        return <strong key={index} className="font-bold text-ink">{part.slice(2, -2)}</strong>;
+      }
+      return <span key={index}>{part}</span>;
+    });
+  };
 
   return (
     <div className="bg-paper min-h-screen pb-20 animate-in fade-in duration-500">
@@ -85,7 +97,7 @@ const CaseStudyDetailView: React.FC<Props> = ({ data, onBack }) => {
                       <h3 className="text-xl font-bold font-serif text-ink mb-4">{section.heading}</h3>
                     )}
                     <p className="text-lg text-graphite leading-relaxed font-light">
-                      {section.content}
+                      {parseContent(section.content || '')}
                     </p>
                   </div>
                 );
@@ -100,10 +112,34 @@ const CaseStudyDetailView: React.FC<Props> = ({ data, onBack }) => {
                       {section.items?.map((item, i) => (
                         <li key={i} className="flex gap-4 items-start text-graphite">
                            <span className="mt-2 w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>
-                           <span className="text-lg leading-relaxed">{item}</span>
+                           <span className="text-lg leading-relaxed">{parseContent(item)}</span>
                         </li>
                       ))}
                     </ul>
+                  </div>
+                );
+
+              case 'segments':
+                return (
+                  <div key={idx} className="my-12">
+                    {section.heading && (
+                      <h3 className="text-xl font-bold font-serif text-ink mb-8 border-b border-line pb-4">{section.heading}</h3>
+                    )}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                      {section.items?.map((item, i) => {
+                         // Parse "**Title**: Description"
+                         const parts = item.split(':');
+                         const title = parts[0].replace(/\*\*/g, '').trim();
+                         const desc = parts.slice(1).join(':').trim();
+                         
+                         return (
+                           <div key={i} className="bg-zinc-50 p-6 border border-line rounded-sm hover:border-ink hover:shadow-md transition-all">
+                             <h4 className="font-bold text-ink mb-3 uppercase tracking-wide text-xs border-b border-zinc-200 pb-2">{title}</h4>
+                             <p className="text-sm text-graphite leading-relaxed">{desc}</p>
+                           </div>
+                         );
+                      })}
+                    </div>
                   </div>
                 );
 
@@ -117,7 +153,7 @@ const CaseStudyDetailView: React.FC<Props> = ({ data, onBack }) => {
                       </div>
                     )}
                     <p className="text-xl md:text-2xl font-serif leading-relaxed opacity-90">
-                      {section.content}
+                      {parseContent(section.content || '')}
                     </p>
                   </div>
                 );
@@ -140,7 +176,27 @@ const CaseStudyDetailView: React.FC<Props> = ({ data, onBack }) => {
                       })}
                     </div>
                   </div>
-                 )
+                 );
+              
+              case 'image':
+                return (
+                  <div key={idx} className="my-12">
+                    <figure className="w-full">
+                      <div className="border border-line p-2 bg-white rounded-sm shadow-sm">
+                        <img 
+                          src={section.src} 
+                          alt={section.alt || "Case Study Image"} 
+                          className="w-full h-auto object-cover"
+                        />
+                      </div>
+                      {section.caption && (
+                        <figcaption className="text-center text-xs text-graphite mt-3 italic font-serif">
+                          {section.caption}
+                        </figcaption>
+                      )}
+                    </figure>
+                  </div>
+                );
               
               default:
                 return null;

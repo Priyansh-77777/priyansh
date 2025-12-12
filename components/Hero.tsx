@@ -34,17 +34,21 @@ const Hero: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-4">
             <a 
               href="#contact" 
-              className="group flex items-center justify-between gap-4 bg-ink text-white px-8 py-4 rounded-full font-medium transition-all hover:bg-zinc-800"
+              className="group flex items-center justify-between gap-4 bg-ink text-white px-8 py-4 rounded-full font-medium transition-all duration-300 hover:bg-zinc-800 hover:scale-105 hover:shadow-lg active:scale-95"
             >
               Contact Me
-              <Mail className="w-4 h-4" />
+              <span className="animate-subtle-pulse">
+                <Mail className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </span>
             </a>
             <a 
               href="https://drive.google.com/uc?export=download&id=1sBwv6jnNtM2N6PieHVj_gfqDowu_RZ0u"
-              className="group flex items-center justify-between gap-4 bg-transparent border border-line text-ink px-8 py-4 rounded-full font-medium transition-all hover:border-ink"
+              className="group flex items-center justify-between gap-4 bg-transparent border border-line text-ink px-8 py-4 rounded-full font-medium transition-all duration-300 hover:border-ink hover:bg-white hover:scale-105 hover:shadow-lg active:scale-95"
             >
               Download CV
-              <ArrowDownRight className="w-4 h-4 group-hover:rotate-[-45deg] transition-transform" />
+              <span className="animate-subtle-pulse" style={{ animationDelay: '1s' }}>
+                <ArrowDownRight className="w-4 h-4 transition-transform group-hover:rotate-[-45deg]" />
+              </span>
             </a>
           </div>
         </div>

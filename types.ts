@@ -1,3 +1,4 @@
+
 export interface Job {
   company: string;
   role: string;
@@ -45,10 +46,13 @@ export interface CaseStudy {
 }
 
 export interface ContentSection {
-  type: 'text' | 'list' | 'highlight' | 'metric-grid';
+  type: 'text' | 'list' | 'highlight' | 'metric-grid' | 'image' | 'segments';
   heading?: string;
   content?: string;
   items?: string[];
+  src?: string;
+  alt?: string;
+  caption?: string;
 }
 
 export interface CaseStudyDetail extends CaseStudy {
