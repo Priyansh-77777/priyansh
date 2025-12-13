@@ -489,5 +489,84 @@ export const CASE_STUDIES: CaseStudyDetail[] = [
         content: "The team internalized a principle: An experiment without rigor is indistinguishable from opinion. The new framework created decision hygiene across the organization and prevented metric drift caused by repeated false positives. This case established experimentation as an engineering system, not an interpretive ritual."
       }
     ]
+  },
+  {
+    id: "f2p-psychology-research",
+    title: "The Psychology of 'Free': Behavioral Drivers in F2P Economies",
+    category: "Research Paper",
+    summary: "A synthesis of behavioral economic theories—from Loss Aversion to the Endowed Progress Effect—explaining why users spend on free products.",
+    role: "Primary Researcher",
+    focus: "Behavioral Economics",
+    scope: "Literature Review",
+    sections: [
+      {
+        type: 'text',
+        heading: 'Abstract',
+        content: "Free-to-play (F2P) games represent a radical shift in economic models, moving from a goods-based transaction (purchasing a game box) to a service-based behaviorism model. They do not merely offer content without an upfront cost; they are meticulously designed behavioral environments that leverage cognitive biases to drive engagement and monetization. This paper reviews the foundational psychological principles that underpin modern game economies—specifically the Zero-Price Effect, Loss Aversion, and Variable Ratio Schedules—shifting the analysis from 'predatory design' to 'behavioral alignment.' The objective is to understand how F2P models decouple payment from consumption to minimize friction and maximize lifetime value (LTV)."
+      },
+      {
+        type: 'highlight',
+        heading: '1. The Zero-Price Effect',
+        content: "Standard economics posits that people make trade-offs between cost and benefit using a linear utility function. However, Shampanier, Mazar, and Ariely (2007) demonstrated that the price of 'zero' creates a disproportionate emotional pull, a phenomenon known as the Zero-Price Effect. In their experiments, reducing a price from $0.01 to $0.00 increased demand significantly more than reducing $0.14 to $0.13. \n\nIn F2P games, this 'zero-price' lowers the barrier to entry (CAC), flooding the funnel with users who would otherwise be deterred by even a nominal fee. The psychological cost of trying a new game is effectively removed, shifting the user's mental model from 'market norm' (evaluation of worth) to 'social norm' (exploration and reciprocity)."
+      },
+      {
+        type: 'text',
+        heading: '2. The Pain of Paying & Mental Accounting',
+        content: "The act of parting with money stimulates the insula, a brain region associated with physical pain (Prelec & Loewenstein, 1998). This 'Pain of Paying' acts as a negative reinforcement to spending. F2P games mitigate this through the use of intermediate currencies (Gems, Coins, Gold).\n\nBy converting real money (fiat) into virtual currency, the game decouples the transaction from the consumption. Thaler (1985) describes this as manipulating 'Mental Accounting.' When a player purchases a skin using Gems, the transaction feels like a resource allocation within the game's magic circle rather than a financial depletion. The initial purchase of Gems is a sunk cost; the subsequent spending of Gems feels 'free' relative to the real-world wallet."
+      },
+      {
+        type: 'list',
+        heading: '3. Variable Ratio Schedules (The Skinner Box)',
+        items: [
+          "**Mechanism**: B.F. Skinner (1957) demonstrated that operant conditioning is strongest under a 'variable ratio schedule'—where a subject does not know *which* action will yield a reward, only that *some* action eventually will. This creates resistance to extinction; the behavior persists long after rewards stop.",
+          "**Neuroscience**: This mechanism leverages 'Reward Prediction Error' (Schultz, 2016). Dopamine neurons fire not upon receiving a reward, but upon the *anticipation* of an uncertain reward. A guaranteed reward yields a flat dopamine response. An uncertain reward yields a spike.",
+          "**Application**: This is the engine behind loot boxes (Gacha). If every chest contained a legendary item, the dopamine response would habituate (Hedonic Adaptation). By making high-value rewards rare (e.g., 0.6% drop rate) and unpredictable, the game maintains a state of high arousal and anticipation."
+        ]
+      },
+      {
+        type: 'text',
+        heading: '4. The Endowed Progress Effect',
+        content: "Users are more likely to complete a goal if they believe they have already made progress toward it. Nunes and Drèze (2006) showed that car wash customers given a punch card with 2 stamps already filled in (on a 10-stamp card) were significantly more likely to complete the card than those given a blank 8-stamp card, despite the effort required being identical.\n\nF2P tutorials utilize this by flooding new players with currency, rapid level-ups, and unlocked zones (Early Game Flow). This creates a sense of 'unearned' investment. The player feels they have already built an asset, triggering a desire to maintain the momentum and 'complete' the set."
+      },
+      {
+        type: 'text',
+        heading: '5. Loss Aversion & The Sunk Cost Fallacy',
+        content: "Kahneman and Tversky’s Prospect Theory (1979) established that individuals feel the pain of a loss roughly twice as intensely as the pleasure of an equivalent gain. In gaming, this manifests as the 'Sunk Cost Fallacy' (Arkes & Blumer, 1985).\n\nOnce a player has invested significant time or money into a game, the prospect of quitting is framed psychologically as 'losing' that investment. Battle Passes leverage this explicitly. A player who has leveled up a free Battle Pass to level 50 has 'earned' the rewards on the premium track but cannot access them. Buying the pass is framed not as a purchase, but as 'reclaiming' what is already theirs to avoid the loss of effort."
+      },
+      {
+        type: 'text',
+        heading: '6. Hyperbolic Discounting & Time Famine',
+        content: "Humans display 'Hyperbolic Discounting' (Laibson, 1997), where they consistently value immediate rewards significantly higher than future rewards, even if the future reward is objectively larger. F2P games create artificial scarcity of time (energy timers, build timers). The option to 'Skip Timer for 10 Gems' targets this bias. The pain of waiting 4 hours is immediate and visceral; the cost of 10 gems (approx $0.10) is abstract and deferred. The impulse to pay is driven by the desire to resolve the immediate friction."
+      },
+      {
+        type: 'metric-grid',
+        heading: 'Behavioral Impact Metrics',
+        items: [
+          "Zero Price: +10x User Acquisition",
+          "Variable Rewards: +High Retention",
+          "Sunk Cost: +LTV Duration"
+        ]
+      },
+      {
+        type: 'highlight',
+        heading: 'Conclusion',
+        content: "Successful F2P economies are not accidental; they are empirical applications of behavioral science. By understanding the Zero-Price Effect, mitigating the Pain of Paying, and utilizing Variable Ratio Schedules, product managers create systems that align with fundamental human cognitive patterns. However, the efficacy of these methods raises ethical questions regarding the exploitation of cognitive vulnerabilities, necessitating a balance between sustainable monetization and player well-being."
+      },
+      {
+        type: 'list',
+        heading: 'References',
+        items: [
+           "**Ariely, D., Shampanier, K., & Mazar, N. (2007)**. Zero as a Special Price: The True Value of Free Products. *Marketing Science*, 26(6), 742-757.",
+           "**Arkes, H. R., & Blumer, C. (1985)**. The psychology of sunk cost. *Organizational Behavior and Human Decision Processes*, 35(1), 124-140.",
+           "**Kahneman, D., & Tversky, A. (1979)**. Prospect Theory: An Analysis of Decision under Risk. *Econometrica*, 47(2), 263-291.",
+           "**Laibson, D. (1997)**. Golden Eggs and Hyperbolic Discounting. *The Quarterly Journal of Economics*, 112(2), 443–477.",
+           "**Nunes, J. C., & Drèze, X. (2006)**. The Endowed Progress Effect: How Artificial Advancement Increases Effort. *Journal of Consumer Research*, 32(4), 504-512.",
+           "**Prelec, D., & Loewenstein, G. (1998)**. The Red and the Black: Mental Accounting of Savings and Debt. *Marketing Science*, 17(1), 4-28.",
+           "**Schultz, W. (2016)**. Dopamine reward prediction-error signaling: a two-component response. *Nature Reviews Neuroscience*, 17, 183–195.",
+           "**Skinner, B. F. (1957)**. *Verbal Behavior*. New York: Appleton-Century-Crofts.",
+           "**Thaler, R. H. (1985)**. Mental Accounting and Consumer Choice. *Marketing Science*, 4(3), 199-214."
+        ]
+      }
+    ]
   }
 ];
