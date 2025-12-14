@@ -42,7 +42,7 @@ const Hero: React.FC = () => {
               </span>
             </a>
             <a 
-              href="https://drive.google.com/uc?export=download&id=14tsG-XCcgqAP2fyHrnUVVVh_wsD-9eMC"
+              href="https://drive.google.com/uc?export=download&id=1Nj1qkKf8XMzctpc95KJcV1xt_r6iqbsT"
               className="group flex items-center justify-between gap-4 bg-transparent border border-line text-ink px-8 py-4 rounded-full font-medium transition-all duration-300 hover:border-ink hover:bg-white hover:scale-105 hover:shadow-lg active:scale-95"
             >
               Download CV
